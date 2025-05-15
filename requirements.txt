@@ -11,9 +11,9 @@ jupyterlab==4.2.2
 notebook==7.2.1
 tqdm==4.66.4
 
-# NLP / sentiment (optional; used if you run text sentiment features)
+# NLP / sentiment 
 textblob==0.18.0
-# or vaderSentiment==3.3.2  # pick one; comment out the one you don't use
+# or vaderSentiment==3.3.2 
 
 # Utility
 python-dateutil==2.9.0.post0
