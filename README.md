@@ -14,7 +14,7 @@
 2. [Project Structure](#project-structure)  
 3. [Workflow Overview](#workflow-overview)  
 4. [Approach & Methods](#approach--methods)
-5. [Model Training & Evaluation](#model-training-&-evaluation)
+5. [Model Training & Evaluation](#model-training--evaluation)
 6. [Data & Model Artefacts](#data--model-artefacts)
 7. [Quick Start](#quick-start) 
 8. [Tableau Dashboard](#tableau-dashboard)  
