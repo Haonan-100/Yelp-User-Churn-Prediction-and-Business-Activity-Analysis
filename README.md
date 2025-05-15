@@ -18,8 +18,7 @@
 6. [Quick Start](#quick-start) 
 7. [Tableau Dashboard](#tableau-dashboard)  
 8. [Sample Results](#sample-results)  
-9. [Future Work](#future-work)  
-10. [Credits](#credits)  
+9. [Credits](#credits)  
 
 ---
 
