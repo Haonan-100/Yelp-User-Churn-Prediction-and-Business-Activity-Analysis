@@ -1,0 +1,45 @@
+MIT License
+Copyright (c) 2025 Haonan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+--------------------------------------------------------------------
+DATA NOTICE — Yelp Open Dataset
+--------------------------------------------------------------------
+The raw and processed data used in this project originate from the
+**Yelp Open Dataset** and are licensed separately under the
+**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+(CC BY-NC-SA 4.0)** license.
+
+License summary:
+  • Attribution — You must give appropriate credit to Yelp.  
+  • Non-Commercial — You may not use the material for commercial purposes.  
+  • Share-Alike — If you remix, transform, or build upon the data,
+    you must distribute your contributions under the same license.
+
+Full text of the CC BY-NC-SA 4.0 license:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+The Yelp dataset files themselves are **not** distributed in this repository.
+Users must download them directly from https://www.yelp.com/dataset
+and accept Yelp’s terms of use.
+
+This notice does not alter or supersede any of the terms in either license.
