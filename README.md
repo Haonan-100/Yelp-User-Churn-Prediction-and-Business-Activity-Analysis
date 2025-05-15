@@ -14,11 +14,12 @@
 2. [Project Structure](#project-structure)  
 3. [Workflow Overview](#workflow-overview)  
 4. [Approach & Methods](#approach--methods)
-5. [Data & Model Artefacts](#data--model-artefacts)
-6. [Quick Start](#quick-start) 
-7. [Tableau Dashboard](#tableau-dashboard)  
-8. [Sample Results](#sample-results)  
-9. [Credits](#credits)  
+5. [Model Training & Evaluation](#model-training-&-evaluation)
+6. [Data & Model Artefacts](#data--model-artefacts)
+7. [Quick Start](#quick-start) 
+8. [Tableau Dashboard](#tableau-dashboard)  
+9. [Sample Results](#sample-results)  
+10. [Credits](#credits)  
 
 ---
 
@@ -106,7 +107,60 @@ This section answers two questions:
 For full implementation details, see inline comments in each notebook or the functions within `/src`.
 
 ---
+## Model Training & Evaluation
 
+**Algorithm:** XGBoost (Classifier)
+**Data Split:** 80 % training / 20 % time-based validation; final model retrained on full training data and evaluated on a separate hold‑out test set.
+
+| Hyperparameter     | Value   | Description                                                  |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| `max_depth`        | 6       | Maximum tree depth to prevent overfitting                    |
+| `n_estimators`     | 800     | Number of boosting rounds (with early stopping)              |
+| `learning_rate`    | 0.08    | Step size shrinkage                                          |
+| `subsample`        | 0.8     | Fraction of rows sampled per tree                            |
+| `colsample_bytree` | 0.8     | Fraction of features sampled per tree                        |
+| `scale_pos_weight` | 4.1     | Balances positive/negative class weights (churn rate ≈ 20 %) |
+| `eval_metric`      | `aucpr` | Area under the Precision‑Recall curve metric                 |
+
+### Test‑Set Metrics (@ default threshold = 0.50)
+
+| Metric      | Score     |
+| ----------- | --------- |
+| **ROC‑AUC** | **0.770** |
+| **PR‑AUC**  | **0.642** |
+| Accuracy    | 0.748     |
+| Precision   | 0.915     |
+| Recall      | 0.773     |
+| F1‑score    | 0.838     |
+
+> **Threshold Tuning**
+> Using the default threshold of 0.50 slightly limits recall. By inspecting the PR curve and targeting a Precision of \~0.80, lowering the threshold to **0.35** increases recall by \~8 percentage points (0.69 → 0.77). Business users can interactively adjust this threshold in the “Retention Simulator” dashboard to balance recall against false‑positive costs.
+
+#### Confusion Matrix (@ threshold = 0.35)
+
+|                   | **Predicted Retain** | **Predicted Churn** |
+| ----------------- | -------------------- | ------------------- |
+| **Actual Retain** | 14,152               | 3,718               |
+| **Actual Churn**  | 1,289                | 4,402               |
+
+> *Test set size: 23,561 users; actual churn rate: 24.2 %*
+
+### Feature Importance (Top 10 by Gain)
+
+1. Days since last review
+2. Total review count
+3. Useful votes
+4. Account age (days)
+5. Average star rating
+6. Friends count
+7. Elite membership years
+8. Fans
+9. Star rating standard deviation
+10. Average recent review length
+
+A full bar chart and SHAP summary plot are available in the **Model Explainability** dashboard for deeper per‑feature and per‑user impact analysis.
+
+---
 ## Data & Model Artefacts
 
 ### Processed CSV files
