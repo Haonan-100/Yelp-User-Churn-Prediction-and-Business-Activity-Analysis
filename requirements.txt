@@ -1,0 +1,10 @@
+pandas>=2.2
+pyarrow>=15.0
+numpy
+tqdm
+matplotlib
+seaborn
+scikit-learn
+xgboost
+dask[dataframe]
+notebook
